@@ -10,11 +10,30 @@ class ShoppingCart extends React.Component {
   }
 
   state = {
-    itemsForSale: {},
-    itemsInCart: {}
+    itemsForSale: [],
+    itemsInCart: []
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.firebase.itemsForSale().onSnapshot(snapshot => {
+      let itemsForSale = [];
+      snapshot.forEach(doc => {
+        itemsForSale.push({ ...doc.data(), uid: doc.id, select: false });
+      });
+      this.setState({
+        itemsForSale: itemsForSale
+      });
+    });
+    this.props.firebase.itemsInCart().onSnapshot(snapshot => {
+      let itemsInCart = [];
+      snapshot.forEach(doc => {
+        itemsInCart.push({ ...doc.data(), uid: doc.id, select: false });
+      });
+      this.setState({
+        itemsInCart: itemsInCart
+      });
+    });
+  }
 
   render() {
     const { itemsForSale, itemsInCart } = this.state;
