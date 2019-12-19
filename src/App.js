@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
-  return <div>totalcloud</div>;
+  return <ShoppingCart></ShoppingCart>;
 }
 
 export default App;
