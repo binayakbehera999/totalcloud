@@ -15,9 +15,7 @@ const ItemForSale = props => (
       </div>
       <div className="col-sm-8">
         <div className="card-body">
-          <h5 className="card-title foodname" className="">
-            {props.name}
-          </h5>
+          <h5 className="card-title foodname">{props.name}</h5>
         </div>
         <div
           className="card-text"
@@ -25,6 +23,11 @@ const ItemForSale = props => (
         >
           ${props.price}
         </div>
+        <i
+          className="fa fa-plus-circle"
+          aria-hidden="true"
+          onClick={() => props.selectItemToRemove(props.id)}
+        ></i>
       </div>
     </div>
   </div>

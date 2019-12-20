@@ -33,8 +33,22 @@ class ShoppingCart extends React.Component {
   selectItemToRemove = id => {
     let itemsToRemove = this.state.itemsToRemove;
     itemsToRemove.push(id);
+    console.log(itemsToRemove);
     this.setState({
       itemsToRemove: itemsToRemove
+    });
+  };
+
+  removeItemsFromCart = () => {
+    let itemsToRemove = this.state.itemsToRemove;
+    itemsToRemove.forEach(item => {
+      this.props.firebase.foodItem(item).update({
+        inCart: false
+      });
+    });
+    console.log(itemsToRemove);
+    this.setState({
+      itemsToRemove: []
     });
   };
 
@@ -70,7 +84,7 @@ class ShoppingCart extends React.Component {
   render() {
     const { itemsForSale, itemsInCart } = this.state;
     return (
-      <div className="conatiner">
+      <div style={{ width: "100%" }}>
         <div className="row">
           <div className="col-sm-4">
             <ItemsForSaleList
@@ -79,10 +93,16 @@ class ShoppingCart extends React.Component {
             ></ItemsForSaleList>
           </div>
           <div className="col-sm-4">
-            <ItemsInCartList items={itemsInCart}></ItemsInCartList>
+            <ItemsInCartList
+              items={itemsInCart}
+              selectItemToRemove={this.selectItemToRemove}
+            ></ItemsInCartList>
           </div>
         </div>
         <button onClick={() => this.addItemsToCart()}>Add Items To Cart</button>
+        <button onClick={() => this.removeItemsFromCart()}>
+          Remove Items From Cart
+        </button>
       </div>
     );
   }
