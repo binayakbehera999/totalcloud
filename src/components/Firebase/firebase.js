@@ -16,10 +16,8 @@ class Firebase {
     this.db = app.firestore();
   }
 
-  itemToAdd = uid => this.db.doc(`itemsForSale/${uid}`);
-  itemsForSale = () => this.db.collection("itemsForSale");
-
-  itemToRemove = uid => this.db.doc(`itemsInCart/${uid}`);
-  itemsInCart = () => this.db.collection("itemsInCart");
+  foodItem = uid => this.db.doc(`foodItems/${uid}`);
+  foodItems = () => this.db.collection("foodItems");
 }
+
 export default Firebase;
