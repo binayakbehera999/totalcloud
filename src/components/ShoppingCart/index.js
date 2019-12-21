@@ -18,8 +18,7 @@ class ShoppingCart extends React.Component {
     itemsForSale: [],
     itemsInCart: [],
     itemsToAdd: [],
-    itemsToRemove: [],
-    loading: false
+    itemsToRemove: []
   };
 
   selectItemToAdd = id => {
@@ -71,7 +70,6 @@ class ShoppingCart extends React.Component {
   };
 
   async componentDidMount() {
-    this.setState({ loading: true });
     this.props.firebase.foodItems().onSnapshot(snapshot => {
       let itemsForSale = [];
       let itemsInCart = [];
@@ -83,20 +81,13 @@ class ShoppingCart extends React.Component {
       });
       this.setState({
         itemsForSale: itemsForSale,
-        itemsInCart: itemsInCart,
-        loading: false
+        itemsInCart: itemsInCart
       });
     });
   }
 
   render() {
-    const {
-      itemsForSale,
-      itemsInCart,
-      itemsToAdd,
-      itemsToRemove,
-      loading
-    } = this.state;
+    const { itemsForSale, itemsInCart, itemsToAdd, itemsToRemove } = this.state;
     return (
       <div className="mt-5 shopping-cart">
         <div className="row">
@@ -104,7 +95,6 @@ class ShoppingCart extends React.Component {
             <ItemsForSaleList
               items={itemsForSale}
               selectItemToAdd={this.selectItemToAdd}
-              loading={loading}
             ></ItemsForSaleList>
           </div>
           <div className="col-md-2 my-5">
@@ -133,7 +123,6 @@ class ShoppingCart extends React.Component {
             <ItemsInCartList
               items={itemsInCart}
               selectItemToRemove={this.selectItemToRemove}
-              loading={loading}
             ></ItemsInCartList>
           </div>
         </div>
