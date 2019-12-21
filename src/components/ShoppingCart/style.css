@@ -1,4 +1,44 @@
 .shopping-cart {
-  height: 40rem;
-  width: 100%;
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+
+.cart-btn {
+  border: 2px solid #f8a22f;
+  color: white;
+  background: none;
+  border-radius: 60px;
+  height: 4rem;
+  width: 90%;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 17rem;
+  opacity: 90%;
+  font-family: "Roboto Mono", monospace;
+}
+
+.cart-btn:hover {
+  color: white;
+  background: #f8a22f;
+  border-radius: 60px;
+  height: 4rem;
+  width: 90%;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 17rem;
+  font-family: "Roboto Mono", monospace;
+}
+.on {
+  opacity: auto;
+}
+
+.off {
+  opacity: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .cart-btn {
+    margin-top: 0.25rem;
+  }
 }

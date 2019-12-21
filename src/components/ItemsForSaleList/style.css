@@ -1,6 +1,10 @@
 .shop-header {
-  font-family: "Varela Round", sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   font-size: 2rem;
-  height: 100px;
+}
+
+.item-list-body {
+  height: 500px;
+  overflow: scroll;
 }

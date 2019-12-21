@@ -1,3 +1,7 @@
 .foodname {
   font-family: "Montserrat";
 }
+
+.selected {
+  background: #a9a9a9 !important;
+}

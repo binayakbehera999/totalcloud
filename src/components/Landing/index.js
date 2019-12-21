@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import navIcon from "../nav-icon.png";
 import Navigation from "../Navigation";
 
 const Landing = () => {
@@ -10,14 +11,8 @@ const Landing = () => {
         <div className="row py-3">
           <div className="col-lg-1 col-xs-12"></div>
           <div className="col-lg-5 col-xs-12">
-            <div className="landing-text">Have no time</div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-1 col-xs-3"></div>
-          <div className="col-lg-5 col-xs-4">
             <div className="landing-text">
-              to prepare <span className="food-text">food</span>?
+              Have no time to prepare <span className="food-text">food</span>?
             </div>
           </div>
         </div>
@@ -55,6 +50,9 @@ const Landing = () => {
           </div>
         </div>
       </div>
+      <a href="#shoppingcart">
+        <img src={navIcon} className="nav-icon"></img>
+      </a>
     </div>
   );
 };

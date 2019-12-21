@@ -5,7 +5,7 @@ import Landing from "./components/Landing";
 
 function App() {
   return (
-    <div className="container-fluid col-lg-10">
+    <div className="">
       <Landing></Landing>
 
       <ShoppingCart></ShoppingCart>

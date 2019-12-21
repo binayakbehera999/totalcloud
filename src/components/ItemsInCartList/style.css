@@ -1,6 +1,10 @@
 .cart-header {
-  font-family: "Varela Round", sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   font-size: 2rem;
-  height: 100px;
+}
+
+.item-list {
+  margin: 15%;
+  border-radius: 0px !important;
 }

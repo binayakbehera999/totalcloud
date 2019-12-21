@@ -4,10 +4,10 @@ import "./style.css";
 const Navigation = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg" style={{ fontSize: "1rem" }}>
+      <nav className="navbar navbar-expand-lg">
         <div
           className="navbar-brand ml-lg-5"
-          style={{ textDecorationColor: "white", fontSize: "1.5rem" }}
+          style={{ textDecorationColor: "white", fontSize: "2rem" }}
         >
           FOOD.<span style={{ color: "#f8a22f" }}>LOGO</span>
         </div>

@@ -18,13 +18,15 @@ class ShoppingCart extends React.Component {
     itemsForSale: [],
     itemsInCart: [],
     itemsToAdd: [],
-    itemsToRemove: []
+    itemsToRemove: [],
+    loading: false
   };
 
   selectItemToAdd = id => {
     let itemsToAdd = this.state.itemsToAdd;
+
     itemsToAdd.push(id);
-    console.log(itemsToAdd);
+
     this.setState({
       itemsToAdd: itemsToAdd
     });
@@ -37,6 +39,11 @@ class ShoppingCart extends React.Component {
     this.setState({
       itemsToRemove: itemsToRemove
     });
+    if (!this.state.itemsToAdd.length) {
+      this.setState({
+        toggleSelectAdd: true
+      });
+    }
   };
 
   removeItemsFromCart = () => {
@@ -46,7 +53,6 @@ class ShoppingCart extends React.Component {
         inCart: false
       });
     });
-    console.log(itemsToRemove);
     this.setState({
       itemsToRemove: []
     });
@@ -65,6 +71,7 @@ class ShoppingCart extends React.Component {
   };
 
   async componentDidMount() {
+    this.setState({ loading: true });
     this.props.firebase.foodItems().onSnapshot(snapshot => {
       let itemsForSale = [];
       let itemsInCart = [];
@@ -76,33 +83,60 @@ class ShoppingCart extends React.Component {
       });
       this.setState({
         itemsForSale: itemsForSale,
-        itemsInCart: itemsInCart
+        itemsInCart: itemsInCart,
+        loading: false
       });
     });
   }
 
   render() {
-    const { itemsForSale, itemsInCart } = this.state;
+    const {
+      itemsForSale,
+      itemsInCart,
+      itemsToAdd,
+      itemsToRemove,
+      loading
+    } = this.state;
     return (
-      <div style={{ width: "100%" }}>
+      <div className="mt-5 shopping-cart">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-md-5">
             <ItemsForSaleList
               items={itemsForSale}
               selectItemToAdd={this.selectItemToAdd}
+              loading={loading}
             ></ItemsForSaleList>
           </div>
-          <div className="col-sm-4">
+          <div className="col-md-2 my-5">
+            <center>
+              <div className={itemsToAdd.length ? "on" : "off"}>
+                <button
+                  type="button"
+                  className="cart-btn"
+                  onClick={() => this.addItemsToCart()}
+                >
+                  Add To Cart
+                </button>
+              </div>
+              <div className={itemsToRemove.length ? "on" : "off"}>
+                <button
+                  className="cart-btn"
+                  style={{ marginTop: "2rem" }}
+                  onClick={() => this.removeItemsFromCart()}
+                >
+                  Remove From Cart
+                </button>
+              </div>
+            </center>
+          </div>
+          <div className="col-md-5">
             <ItemsInCartList
               items={itemsInCart}
               selectItemToRemove={this.selectItemToRemove}
+              loading={loading}
             ></ItemsInCartList>
           </div>
         </div>
-        <button onClick={() => this.addItemsToCart()}>Add Items To Cart</button>
-        <button onClick={() => this.removeItemsFromCart()}>
-          Remove Items From Cart
-        </button>
       </div>
     );
   }
