@@ -17,6 +17,15 @@
   padding: 10px 30px !important;
 }
 
+@media screen and (max-width: 1682px) and (min-width: 998px) {
+  .nav-link {
+    color: black;
+  }
+  .contact-us {
+    padding: 10px 25px !important;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .nav-link {
     color: #212529;

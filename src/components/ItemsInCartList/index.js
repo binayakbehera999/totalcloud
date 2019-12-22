@@ -19,7 +19,7 @@ const ItemsInCartList = props => (
         ))}
       </div>
     ) : (
-      <div className="card" style={{ border: "none" }}>
+      <div className="card cart-card" style={{ border: "none" }}>
         <div
           className="card-body item-list-body"
           style={{ textAlign: "center", fontSize: 25 }}

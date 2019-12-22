@@ -37,6 +37,24 @@
   opacity: 50%;
 }
 
+@media screen and (max-width: 1000px) and (min-width: 900px) {
+  .cart-btn {
+    width: 130%;
+  }
+  .cart-btn:hover {
+    width: 130%;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .cart-btn {
+    width: 130%;
+  }
+  .cart-btn:hover {
+    width: 130%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .cart-btn {
     margin-top: 0.25rem;

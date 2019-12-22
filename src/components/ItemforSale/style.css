@@ -1,7 +1,20 @@
 .foodname {
   font-family: "Montserrat";
+  font-size: 25px;
 }
 
 .selected {
   background: #a9a9a9 !important;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 900px) {
+  .foodname {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .foodname {
+    font-size: 20px;
+  }
 }

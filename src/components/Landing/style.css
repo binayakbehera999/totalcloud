@@ -39,11 +39,58 @@
   transition: 2s;
 }
 
+@media screen and (max-width: 998px) and (min-width: 900px) {
+  .hero {
+    background: url("../mob-bg.jpg");
+    background-size: cover;
+    height: 80vh;
+    text-align: center;
+  }
+
+  .food-text {
+    color: #f8a22f;
+  }
+  .landing-text {
+    font-size: 4rem;
+  }
+  .landing-subtitle {
+    color: #f8a22f;
+    font-size: 1.3rem;
+  }
+
+  .nav-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .hero {
+    background: url("../mob-bg.jpg");
+    background-size: cover;
+    height: 80vh;
+    text-align: center;
+  }
+
+  .food-text {
+    color: #f8a22f;
+  }
+  .landing-text {
+    font-size: 4rem;
+  }
+  .landing-subtitle {
+    color: #f8a22f;
+    font-size: 1.3rem;
+  }
+  .nav-icon {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .hero {
     background: url("../mob-bg.jpg");
     background-size: cover;
-    height: 90vh;
+    height: 80vh;
     text-align: center;
   }
 

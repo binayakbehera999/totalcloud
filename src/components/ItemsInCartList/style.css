@@ -8,3 +8,29 @@
   margin: 15%;
   border-radius: 0px !important;
 }
+
+.item-price {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 900px) {
+  .card-body {
+    padding: 0px 2px !important;
+  }
+  .item-price {
+    font-size: 19px;
+  }
+
+  .cart-card {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .item-price {
+    font-size: 15px;
+  }
+  .card-body {
+    padding: 0px 2px !important;
+  }
+}

@@ -23,10 +23,10 @@ const ItemForSale = props => {
           <div className="col-md-8">
             <div className="card-body">
               <div className="card-text mt-4">
-                <div style={{ fontSize: 25 }}>
+                <div className="foodname">
                   {props.name}
                   <span
-                    className="float-right mx-2"
+                    className="float-right mx-lg-2 item-price"
                     style={{ fontWeight: "bold" }}
                   >
                     {" "}
