@@ -5,6 +5,18 @@
 }
 
 .item-list-body {
-  height: 500px;
+  height: 500px !important;
   overflow: scroll;
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .item-list-body {
+    height: 450px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .item-list-body {
+    height: 450px !important;
+  }
 }

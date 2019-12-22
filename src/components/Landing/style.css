@@ -24,7 +24,7 @@
   color: white;
   border-radius: 60px;
   height: 3.5rem;
-  width: 30%;
+  width: 10rem;
 }
 
 .fa {
@@ -43,7 +43,7 @@
   .hero {
     background: url("../mob-bg.jpg");
     background-size: cover;
-    height: 80vh;
+    height: 75vh;
     text-align: center;
   }
 
@@ -60,15 +60,27 @@
 
   .nav-icon {
     display: none;
+  }
+
+  .fa {
+    color: white;
+  }
+  .contact-us {
+    width: 7rem;
+    position: relative;
+    left: 30%;
   }
 }
 
-@media screen and (max-width: 900px) and (min-width: 600px) {
+@media screen and (max-width: 1000px) and (min-width: 600px) {
   .hero {
     background: url("../mob-bg.jpg");
     background-size: cover;
-    height: 80vh;
+    height: 58vh;
     text-align: center;
+  }
+  .fa {
+    color: white;
   }
 
   .food-text {
@@ -83,6 +95,11 @@
   }
   .nav-icon {
     display: none;
+  }
+  .contact-us {
+    width: 15rem;
+    position: relative;
+    left: 30%;
   }
 }
 
@@ -90,8 +107,14 @@
   .hero {
     background: url("../mob-bg.jpg");
     background-size: cover;
-    height: 80vh;
+    height: 60vh;
     text-align: center;
+  }
+  .fa {
+    color: white;
+  }
+  .nav-link {
+    color: white !important;
   }
 
   .food-text {
@@ -106,5 +129,10 @@
   }
   .nav-icon {
     display: none;
+  }
+  .contact-us {
+    width: 14rem;
+    position: relative;
+    left: 28%;
   }
 }

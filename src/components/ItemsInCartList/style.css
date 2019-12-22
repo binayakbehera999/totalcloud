@@ -14,15 +14,8 @@
 }
 
 @media screen and (max-width: 1000px) and (min-width: 900px) {
-  .card-body {
-    padding: 0px 2px !important;
-  }
-  .item-price {
-    font-size: 19px;
-  }
-
-  .cart-card {
-    margin-top: 2rem;
+  .item-list {
+    max-height: 580px;
   }
 }
 
@@ -32,5 +25,8 @@
   }
   .card-body {
     padding: 0px 2px !important;
+  }
+  .item-list {
+    font-size: 10%;
   }
 }
