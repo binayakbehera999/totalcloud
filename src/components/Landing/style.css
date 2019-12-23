@@ -107,7 +107,7 @@
   .hero {
     background: url("../mob-bg.jpg");
     background-size: cover;
-    height: 60vh;
+    height: 90vh;
     text-align: center;
   }
   .fa {
@@ -133,6 +133,6 @@
   .contact-us {
     width: 14rem;
     position: relative;
-    left: 28%;
+    left: 12%;
   }
 }
